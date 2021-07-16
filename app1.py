@@ -73,7 +73,7 @@ if page == "Twitter Tweet Prediction":
 
         sentance = str(raw_text)
         sentance = re.sub(r"http\S+", "", sentance)
-        sentance = BeautifulSoup(sentance, 'lxml').get_text()
+        sentance = BeautifulSoup(sentance, 'html').get_text()
         sentance = decontracted(sentance)
         sentance = re.sub("\S*\d\S*", "", sentance).strip()
         sentance = re.sub('[^A-Za-z]+', ' ', sentance)
